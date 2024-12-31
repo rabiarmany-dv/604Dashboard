@@ -1,0 +1,91 @@
+---
+title: "FlexDashboardsDataViz"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+library(tidyverse)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart 1
+
+```{r}
+rm(list = ls()) # clean memory
+
+location='https://github.com/DACSS-Visual/tabular_univar_cat/raw/main/data/'
+file='eduwa.rda'
+link=paste0(location,file)
+
+
+#getting the data TABLE from the file in the cloud:
+load(file=url(link))
+
+#Begin Chart 1
+suburbEduwa=eduwa[eduwa$LocaleType=='Suburb',]
+suburbEduwa$LocaleSub=droplevels(suburbEduwa$LocaleSub)
+suburbEduwa <- suburbEduwa |>
+  mutate(LocaleSub = case_when(
+    LocaleSub == "Suburb: Large" ~ "Large",
+    LocaleSub == "Suburb: Small" ~ "Small",
+    LocaleSub == "Suburb: Midsize" ~ "Midsize"
+  ))
+suburbEduwa <- drop_na(suburbEduwa)
+
+#reorder to show bars as least to most
+suburbEduwa <- within(suburbEduwa, 
+                   LocaleSub <- factor(LocaleSub,                                       levels=names(sort(table(LocaleSub),                                           decreasing=FALSE))))
+
+#create base
+base <- ggplot(data = suburbEduwa,
+               aes(x = LocaleSub))
+#create titles
+title1 <- 'What size suburb are suburban public schools?'
+subtitle1 <- 'Washington State - 2019'
+source1 <- 'Source: US Department of Education'
+x.AxisText<-"Size"
+y.AxisText<-"Count"
+
+#create labs from titles
+lab1 <- labs(title = title1,
+             subtitle = subtitle1,
+             x= x.AxisText,
+             y= y.AxisText,
+             caption = source1)
+
+#add text above columns
+geom_text1 <-  geom_text(stat = "count",
+        aes(label = after_stat(count)),
+        position = position_dodge(),
+        color = "black",
+        size = 3,
+        vjust = -0.2) 
+
+#put it all together
+plot<- base + geom_bar() + lab1 + geom_text1 + ylim(0,300) 
+  
+plot
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
