@@ -15,6 +15,11 @@ library(tidyverse)
 Column {data-width=650}
 -----------------------------------------------------------------------
 
+## Intro {.sidebar}
+This dashboard is prepared based on instructions given by @magallanes-reyes-data-2022 and @sievert_flexdashboard_2022
+
+-----------------------------------------------------------------------
+
 ### Chart for Homework 1
 
 ```{r}
