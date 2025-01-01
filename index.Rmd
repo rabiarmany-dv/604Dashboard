@@ -12,13 +12,13 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
+## Column {data-width="650"}
 
-## Intro {.sidebar}
+### Intro {.sidebar}
+
 This dashboard is prepared based on instructions given by @magallanes-reyes-data-2022 and @sievert_flexdashboard_2022
 
------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ### Chart for Homework 1
 
@@ -26,8 +26,7 @@ This dashboard is prepared based on instructions given by @magallanes-reyes-data
 readRDS("deli1.rds")
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
+## Column {data-width="350"}
 
 ### Chart for Homework 2
 
@@ -40,4 +39,3 @@ Column {data-width=350}
 ```{r}
 
 ```
-
