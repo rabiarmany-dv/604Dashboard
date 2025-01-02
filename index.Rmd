@@ -2,7 +2,7 @@
 title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
-   orientation: rows
+   vertical_layout: scroll
 
 ---
 
@@ -15,7 +15,7 @@ library(tidyverse)
 
 ------------------------------------------------------------------------
 
-### Introduction {data-height=200}
+### Introduction 
 
 This dashboard is prepared based on instructions given by @magallanes-reyes-data-2022 and @sievert_flexdashboard_2022
 
@@ -23,7 +23,7 @@ This dashboard is prepared based on instructions given by @magallanes-reyes-data
 
 
 
-### Chart for Homework 1 {data-height=650}
+### Chart for Homework 1 
 
 ```{r}
 readRDS("deli1.rds")
