@@ -15,7 +15,7 @@ library(tidyverse)
 
 This dashboard is prepared based on instruction from @magallenes_reyes_data_2022 and @sievert_flexdashboard_2022
 
-### Chart for Homework 1 {data-height=650}
+### Chart for Homework 1 {data-height=1800}
 
 ```{r}
 readRDS("deli1.rds")
