@@ -2,7 +2,7 @@
 title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
-   veritcal_layout: scroll
+   veritcal_layout: fill
 ---
 
 ```{r setup, include=FALSE}
