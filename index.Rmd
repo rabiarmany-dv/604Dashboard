@@ -2,7 +2,6 @@
 title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
 ---
 
 ```{r setup, include=FALSE}
@@ -11,19 +10,22 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-## Column {data-width="250"}
+
 
 ## Intro {.sidebar}
 
 This dashboard is prepared based on instruction from @magallenes_reyes_data_2022 and @sievert_flexdashboard_2022
 
-## Column {data-width="650"}
+Column
+------------------------------------------------------------
 
 ### Chart for Homework 1
 
 ```{r}
 readRDS("deli1.rds")
 ```
+
+
 
 ### Chart for Homework 2
 
