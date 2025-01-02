@@ -1,8 +1,9 @@
 ---
-title: "FlexDashboardsDataViz"
+title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
     vertical_layout: scroll
+
 ---
 
 ```{r setup, include=FALSE}
@@ -13,11 +14,12 @@ library(tidyverse)
 
 
 
-### Intro 
+Inputs {.sidebar}
+------------------------------------------------------------------------
 
 This dashboard is prepared based on instructions given by @magallanes-reyes-data-2022 and @sievert_flexdashboard_2022
 
-## Column {data-width="600"}
+Column 
 ------------------------------------------------------------------------
 
 ### Chart for Homework 1
@@ -40,4 +42,3 @@ readRDS("deli1.rds")
 
 ```
 
-## Column {data-width="600"}
