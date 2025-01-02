@@ -2,6 +2,7 @@
 title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
+    vertical_layout: scroll
 ---
 
 ```{r setup, include=FALSE}
