@@ -14,12 +14,12 @@ library(tidyverse)
 
 
 
-Inputs {.sidebar}
+Column {data-width=200}
 ------------------------------------------------------------------------
 
 This dashboard is prepared based on instructions given by @magallanes-reyes-data-2022 and @sievert_flexdashboard_2022
 
-Column 
+Column {data-width=600}
 ------------------------------------------------------------------------
 
 ### Chart for Homework 1
