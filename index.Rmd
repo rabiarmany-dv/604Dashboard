@@ -14,10 +14,6 @@ library(tidyverse)
 
 
 
-
-
-## Column {data-width="450"}
-
 ### Introduction
 This dashboard is prepared based on instruction from @magallenes_reyes_data_2022 and @sievert_flexdashboard_2022
 
