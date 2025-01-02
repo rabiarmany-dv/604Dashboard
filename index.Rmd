@@ -13,7 +13,7 @@ library(tidyverse)
 
 ## Column {data-width="\"450"}
 
-## Intro {.sidebar}
+### Introduction
 
 This dashboard is prepared based on instructions given by @magallanes-reyes-data-2022 and @sievert_flexdashboard_2022
 
