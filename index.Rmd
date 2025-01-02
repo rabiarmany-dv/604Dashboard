@@ -2,7 +2,7 @@
 title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
-   veritcal_layout: fill
+   orientation: columns
 ---
 
 ```{r setup, include=FALSE}
@@ -11,6 +11,9 @@ library(ggplot2)
 library(tidyverse)
 ```
 
+## Introduction {.sidebar}
+
+This dashboard is prepared based on instruction from @magallenes_reyes_data_2022 and @sievert_flexdashboard_2022
 
 ### Chart for Homework 1
 
