@@ -3,6 +3,7 @@ title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
    orientation: columns
+   veritcal_layout: scroll
 ---
 
 ```{r setup, include=FALSE}
