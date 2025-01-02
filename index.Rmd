@@ -2,7 +2,7 @@
 title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
-   orientation: columns
+    orientation: columns
 ---
 
 ```{r setup, include=FALSE}
@@ -11,9 +11,11 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-## Introduction {.sidebar}
+## Intro {.sidebar}
 
 This dashboard is prepared based on instruction from @magallenes_reyes_data_2022 and @sievert_flexdashboard_2022
+
+## Column {data-width="450"}
 
 ### Chart for Homework 1
 
