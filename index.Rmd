@@ -11,7 +11,7 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-## Column {data-width="\"2000"}
+
 
 ### Introduction
 
