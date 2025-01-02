@@ -3,7 +3,7 @@ title: "FlexDashboardsDataViz"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
-    vertical_layout: fill
+    vertical_layout: scroll
 ---
 
 ```{r setup, include=FALSE}
@@ -12,12 +12,13 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-## Column {data-width="650"}
 
-### Intro {.sidebar}
+
+### Intro 
 
 This dashboard is prepared based on instructions given by @magallanes-reyes-data-2022 and @sievert_flexdashboard_2022
 
+## Column {data-width="600"}
 ------------------------------------------------------------------------
 
 ### Chart for Homework 1
@@ -26,7 +27,7 @@ This dashboard is prepared based on instructions given by @magallanes-reyes-data
 readRDS("deli1.rds")
 ```
 
-## Column {data-width="350"}
+## Column {data-width="600"}
 
 ### Chart for Homework 2
 
@@ -39,3 +40,5 @@ readRDS("deli1.rds")
 ```{r}
 
 ```
+
+## Column {data-width="600"}
