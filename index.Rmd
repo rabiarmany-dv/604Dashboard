@@ -3,7 +3,6 @@ title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
    vertical_layout: scroll
-
 ---
 
 ```{r setup, include=FALSE}
@@ -12,12 +11,7 @@ library(ggplot2)
 library(tidyverse)
 ```
 
-
-
-
-
-
-### Chart for Homework 1 
+### Chart for Homework 1
 
 ```{r}
 readRDS("deli1.rds")
