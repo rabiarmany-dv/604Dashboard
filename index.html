@@ -204,6 +204,14 @@ display: flex;
 .sbframe:not(.active) {
 display: none;
 }
+@media only screen and (min-width: 768px) {
+html, body {
+height: 100%;
+}
+#dashboard-container {
+height: 100%;
+}
+}
 </style>
 
 
@@ -1968,8 +1976,8 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
-    fillPage: false,
-    orientation: "columns",
+    fillPage: true,
+    orientation: "rows",
     storyboard: false,
     defaultFigWidth: 576,
     defaultFigHeight: 460,

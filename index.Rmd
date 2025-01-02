@@ -2,7 +2,7 @@
 title: "Data Viz Flexdashboards"
 output: 
   flexdashboard::flex_dashboard:
-   vertical_layout: scroll
+   orientation: rows
 
 ---
 
