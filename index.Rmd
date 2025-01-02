@@ -14,7 +14,7 @@ library(tidyverse)
 
 
 
-Column {data-width=200}
+Column {data-width=1000}
 ------------------------------------------------------------------------
 
 This dashboard is prepared based on instructions given by @magallanes-reyes-data-2022 and @sievert_flexdashboard_2022
