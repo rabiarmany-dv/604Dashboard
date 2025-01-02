@@ -204,14 +204,6 @@ display: flex;
 .sbframe:not(.active) {
 display: none;
 }
-@media only screen and (min-width: 768px) {
-html, body {
-height: 100%;
-}
-#dashboard-container {
-height: 100%;
-}
-}
 </style>
 
 
@@ -1931,13 +1923,13 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
+<div id="column" class="section level2" data-width="&quot;450">
+<h2>Column</h2>
+</div>
 <div id="intro" class="section level2 sidebar">
 <h2 class="sidebar">Intro</h2>
 <p>This dashboard is prepared based on instructions given by <span class="citation">@magallanes-reyes-data-2022</span> and <span class="citation">@sievert_flexdashboard_2022</span></p>
 <hr />
-</div>
-<div id="column" class="section level2" data-width="&quot;450">
-<h2>Column</h2>
 <div id="chart-for-homework-1" class="section level3">
 <h3>Chart for Homework 1</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
@@ -1978,7 +1970,7 @@ $(document).ready(function() {
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
-    fillPage: true,
+    fillPage: false,
     orientation: "columns",
     storyboard: false,
     defaultFigWidth: 576,
