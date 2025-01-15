@@ -1,0 +1,94 @@
+---
+title: "HW2 690V"
+format: html
+editor: visual
+---
+
+```{r}
+library(stringr)
+```
+
+
+```{r}
+linkMass="https://github.com/DACSS-Visual/tabular_bivar_catcat/raw/refs/heads/main/data/MSP%20DFS%20Arrests%2019-20Q1.xlsx"
+
+#see it
+library(rio)
+arrests=rio::import(linkMass, which =1)
+arrests2=rio::import(linkMass, which =2)
+head(arrests)
+```
+```{r}
+arrests <- arrests |>
+  mutate(Race = case_when(
+    Race == "B" ~ "Black / African-American",
+    Race == "U" ~ "Unkown",
+    Race == "I" ~ "American Indian or Alaskan Native",
+    Race == "O" ~ "Asian or Pacific Islander",
+    Race == "H" ~ "Hispanic",
+    Race == "J" ~ "Middle Eastern or East Indian (South Asia)",
+    Race == "N" ~ "Not Applicable",
+    Race == "W" ~ "White"
+  ))
+colnames(arrests2) <- c("x", "x", "x", "Arrest Offense by UCR Code", "Crime")
+arrests2 <- arrests2 |> select(!contains("x"))
+
+```
+
+```{r}
+arrests <- left_join(arrests, arrests2, by = "Arrest Offense by UCR Code")
+arrests<- na.omit(arrests)
+
+arrests <- arrests |>
+  mutate(race1 = case_when(
+    Race == "Black / African-American" ~ "Black",
+    Race == "White" ~ "White",
+    Race == "Hispanic" ~ "Other",
+    Race == "Unkown" ~ "Other",
+    Race == "Middle Eastern or East Indian (South Asia)" ~ "Other",
+    Race == "Asian or Pacific Islander" ~ "Other",
+    Race == "American Indian or Alaskan Native" ~ "Other"
+  ))
+```
+
+```{r}
+crimetable <- table(arrests$race1, arrests$Crime)
+crimetable
+
+library(magrittr)
+(arrest_mg_col = prop.table(crimetable,
+                            margin = 2)%>%round(.,3))
+```
+
+```{r}
+arrestsDF=as.data.frame(crimetable)
+names(arrestsDF)=c("Race","Crime","counts")
+
+arrestsDF$pctCol=100*as.data.frame(arrest_mg_col)[,3]
+
+arrestsDF
+```
+
+
+```{r}
+library(ggplot2)
+base <- ggplot(data=arrestsDF, 
+             aes(x=Race, y=counts)) + geom_bar(stat="identity")
+```
+
+
+
+```{r}
+baseRE  = ggplot(arrestsDF, 
+                 aes(x = reorder(Crime, pctCol),
+                     y = pctCol )) + theme_minimal()
+
+barsRE = baseRE + geom_bar( stat = "identity" ) 
+barsREFacet = barsRE + facet_grid( ~ Race) 
+barsREFacet= barsREFacet + coord_flip() 
+
+barsREFacet + theme(axis.text.y = element_text(size=6,angle = 20)) 
+```
+
+
+
