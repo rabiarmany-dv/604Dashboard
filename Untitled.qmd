@@ -43,7 +43,7 @@ arrests <- arrests |>
   mutate(race1 = case_when(
     Race == "Black / African-American" ~ "Black",
     Race == "White" ~ "White",
-    Race == "Hispanic" ~ "Other",
+    Race == "Hispanic" ~ "Hispanic",
     Race == "Unkown" ~ "Other",
     Race == "Middle Eastern or East Indian (South Asia)" ~ "Other",
     Race == "Asian or Pacific Islander" ~ "Other",
@@ -79,16 +79,28 @@ base <- ggplot(data=arrestsDF,
 
 
 ```{r}
+
+arrestsDF$Race=factor(arrestsDF$Race, levels = c('Black', 'White','Hispanic', 'Other'))
+
 baseRE  = ggplot(arrestsDF, 
-                 aes(x = reorder(Crime, pctCol),
+                 aes(x = reorder(Crime, pctCol,max),
                      y = pctCol )) + theme_minimal()
 
 barsRE = baseRE + geom_bar( stat = "identity" ) 
 barsREFacet = barsRE + facet_grid( ~ Race) 
 barsREFacet= barsREFacet + coord_flip() 
 
-barsREFacet + theme(axis.text.y = element_text(size=6,angle = 20)) 
+barsRE1 <- barsREFacet  + theme(axis.text.y = element_text(size=7,angle = 20)) + 
+           geom_text(aes(label=ifelse(pctCol>1 &pctCol<99,# condition to annotate
+                                      pctCol,"")), nudge_y = 5)
 ```
 
+```{r}
+bars_labs <- barsRE1 + labs(title= "Arrest Offences by Race in Massachusetts",
+         subtitle = "January 2019 to March 2020",
+         caption = "Massachusetts Crime Data - Official open data portal",
+         x="",y="Percentage of Offense")
+bars_labs
+```
 
 

@@ -31,7 +31,7 @@ readRDS("deli1.rds")
 ### Chart for Homework 2
 
 ```{r}
-
+readRDS("deli2.rds")
 ```
 
 ### Chart for Homework 3
