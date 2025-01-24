@@ -37,5 +37,6 @@ readRDS("deli2.rds")
 ### Chart for Homework 3
 
 ```{r}
-
+setwd("/Users/rabiarmany/Documents/GitHub/DVizDashboard")
+readRDS("deli3.rds")
 ```
