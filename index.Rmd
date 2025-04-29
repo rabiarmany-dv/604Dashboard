@@ -15,7 +15,7 @@ library(tidyverse)
 
 ## Intro {.sidebar}
 
-This dashboard  is prepared based on instruction from @magallenes_reyes_data_2022 and @sievert_flexdashboard_2022
+This dashboard is prepared for DACSS 604 at UMass Amherst
 
 Column
 ------------------------------------------------------------
